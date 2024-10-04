@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Find Your City</h1>
+        <input type="text" id="cityInput" placeholder="Enter city name" />
+        <button onclick="checkCity()">Check City</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        let cities = ["Karachi","Lahore","Islamabad","Faisalabad","Rawalpindi","Multan","Peshawar","Quetta","Sialkot","Gujranwala"];
+
+function checkCity() {
+    let input = document.getElementById('cityInput').value;
+    let result = document.getElementById('result');
+
+    if (cities.includes(input)) {
+        result.innerHTML = `<span style="color: green;">${input} is found!</span>`;
+    } else {
+        result.innerHTML = `<span style="color: red; font-weight: bold;">City not found</span>`;
+    }
+}
+
+    </script>
+    <style>
+body {
+       background: linear-gradient(to right, #ff7e5f, #feb47b);
+       font-family: 'Arial', sans-serif;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 100vh;
+       margin: 0;
+       color: white;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 1.2em;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #ff4f3d;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+    </style>
+</body>
+</html>
